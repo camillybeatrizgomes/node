@@ -3,7 +3,7 @@ const app = express()
 const handlebars = require('express-handlebars')
 const bodyParse = require('body-parser')
 const Sequelize = require('sequelize')
-const post = require('./index2')
+const post = require('./modules/post')
 
 app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -11,15 +11,9 @@ app.set('view engine', 'handlebars');
 app.use(bodyParse.urlencoded({extended: false}))
 app.use(bodyParse.json())
 
-const sequelize = new Sequelize('postapp', 'root', 'tete1522', {
-    host: "localhost",
-    dialect: "mysql",
-    query: {raw:true}
-})
-
 app.get('/', function(req,res){
     post.findAll().then(function (posts){
-        res.render('home',{posts: post})
+        res.render('home',{posts: posts})
     })
     res.render('home')
 })
@@ -30,7 +24,7 @@ app.get('/cadastro', function(req,res){
 
 app.post('/add', function(req,res){
     post.create({
-        titulos: req.body.titulos,
+        titulo: req.body.titulo,
         conteudo: req.body.conteudo
     }).then(function(){
         res.redirect('/')

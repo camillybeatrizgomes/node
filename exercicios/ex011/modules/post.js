@@ -1,7 +1,7 @@
 const index = require('./index1')
 
 const post = index.sequelize.define('postagens',{
-    titulos: {
+    titulo: {
         type: index.Sequelize.STRING
     },
     conteudo: {
