@@ -2,7 +2,8 @@ const Sequelize = require('sequelize')
 
 const sequelize = new Sequelize('postapp', 'root', 'tete1522', {
     host: "localhost",
-    dialect: "mysql"
+    dialect: "mysql",
+    query:{raw:true}
 })
 
 module.exports = {

@@ -3,7 +3,7 @@ const app = express()
 const handlebars = require('express-handlebars')
 const bodyParse = require('body-parser')
 const Sequelize = require('sequelize')
-const post = require('./modules/post')
+const Post = require('./modules/Post')
 
 app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -12,10 +12,9 @@ app.use(bodyParse.urlencoded({extended: false}))
 app.use(bodyParse.json())
 
 app.get('/', function(req,res){
-    post.findAll().then(function (posts){
+    Post.findAll().then(function (posts){
         res.render('home',{posts: posts})
     })
-    res.render('home')
 })
 
 app.get('/cadastro', function(req,res){
@@ -23,7 +22,7 @@ app.get('/cadastro', function(req,res){
 })
 
 app.post('/add', function(req,res){
-    post.create({
+    Post.create({
         titulo: req.body.titulo,
         conteudo: req.body.conteudo
     }).then(function(){

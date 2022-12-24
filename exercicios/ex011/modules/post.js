@@ -1,6 +1,6 @@
 const index = require('./index1')
 
-const post = index.sequelize.define('postagens',{
+const Post = index.sequelize.define('postagens',{
     titulo: {
         type: index.Sequelize.STRING
     },
@@ -9,6 +9,6 @@ const post = index.sequelize.define('postagens',{
     }
 });
 
-module.exports = post
+module.exports = Post
 
-//post.sync({force: true})
+//Post.sync({force: true})
