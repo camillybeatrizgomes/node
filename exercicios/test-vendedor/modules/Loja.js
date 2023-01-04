@@ -10,7 +10,7 @@ const Loja = index.sequelize.define('vendedor',{
         type: index.Sequelize.STRING
     },
     data_de_nascimento: {
-        type: index.Sequelize.STRING(11)
+        type: index.Sequelize.INTEGER(11)
     },
     cnpj: {
         type: index.Sequelize.STRING(18)
