@@ -1,0 +1,26 @@
+form {
+    width: 500px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+input {
+    margin: auto;
+    width: 400px;
+    display: flex;
+    margin-bottom: 10px;
+    padding: 3px;
+}
+
+.btn {
+    width: 100px;
+}
+
+img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.btnEditar {
+    margin-top: 10px;
+}

@@ -1,0 +1,20 @@
+body {
+    background-color: darkgray;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+h1 {
+    padding-bottom: 70px;
+}
+
+img {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: 9px solid white;
+    border-radius: 10px;
+    padding: 40px;
+}
